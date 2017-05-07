@@ -1,14 +1,12 @@
 Sample Todo app 
 ============
 
-Using ASP.NET Core, Enity Framework Core, TypeScript and React/Redux.
+Using ASP.NET Core, Enity Framework Core, TypeScript and React/Redux. This is the Sample app for use at the Let's do CI/CD workshop.
 
 ## Prerequisites
 
- - Visual Studio 2015
- -  [.NET Core for Visual Studio](https://www.microsoft.com/net/core)
- -  [NodeJS](https://nodejs.org)
-
+ - Visual Studio 2017 Update 2
+ 
 ## TypeScript build
 
 Run `npm install`
@@ -21,5 +19,4 @@ Run `npm run webpack-production` to build the production JS.
 
 Run `npm run test`.
 
-## License
-[MIT](https://github.com/eXavera/Todo-app-sample/blob/master/LICENSE.md)
+
