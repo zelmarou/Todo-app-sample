@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Deploy.ps1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Deploy.ps1" />
     <Content Include="wwwroot\styles.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

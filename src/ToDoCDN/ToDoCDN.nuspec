@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+ <metadata>
+   <id>ToDoCDN</id>
+   <title>ToDoCDN</title>
+   <authors>Joel Dickson</authors>
+   <owners>Agoda</owners>
+   <version>0.0.0.0</version>
+   <description>CDN Package for distribution</description>
+ </metadata>
+ <files>
+   <file src="dist\**\*" target="dist" />
+   <file src="Deploy.ps1" target="" />
+ </files>
+</package>
