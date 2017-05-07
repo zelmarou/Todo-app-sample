@@ -244,3 +244,4 @@ ModelManifest.xml
 # Temporary Typescript's files
 **/Scripts/**/*.js
 **/Scripts/**/*.map
+**/dist/*

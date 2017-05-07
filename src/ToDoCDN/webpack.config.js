@@ -11,8 +11,12 @@ const plugins = [
         verbose: false,
         dry: false
     }),
-    new AssetsWebpackPlugin({ prettyPrint: true, path: path.join(__dirname, '..', 'Todo') }),
-    new webpack.optimize.CommonsChunkPlugin({ name: "vendor", filename: "wwwroot/vendor-[hash].js" })
+    new AssetsWebpackPlugin(
+        {
+            prettyPrint: true,
+            path: path.join(__dirname, '..', 'Todo')
+        }),
+    new webpack.optimize.CommonsChunkPlugin({ name: "vendor", filename: "vendor-[hash].js" })
 ];
 
 if (isProduction) {
@@ -31,7 +35,8 @@ module.exports = {
     },
     entry: path.resolve('./Scripts/main.tsx'),
     output: {
-        filename: "wwwroot/[name]-[chunkhash].js"
+        filename: "[name]-[chunkhash].js",
+        path: "dist"
     },
     module: {
         loaders: [

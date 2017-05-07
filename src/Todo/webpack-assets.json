@@ -1,8 +1,8 @@
 {
   "main": {
-    "js": "wwwroot/main-dca253588a0d0deec9d5.js"
+    "js": "main-dca253588a0d0deec9d5.js"
   },
   "vendor": {
-    "js": "wwwroot/vendor-698bb01ddb97b2418645.js"
+    "js": "vendor-0b6ab834e027781e98aa.js"
   }
 }

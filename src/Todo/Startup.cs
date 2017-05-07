@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Todo.DataAccess;
 using Todo.Model.WebpackAssetsChildren;
-using Microsoft.Extensions.Options.ConfigurationExtensions;
+using Todo.Model;
 
 namespace Todo
 {
@@ -61,7 +61,9 @@ namespace Todo
             services.AddDbContext<SqlDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddTransient<IDatabase, SqlDbContext>();
             services.Configure<main>(Configuration.GetSection("main"));
-            
+            services.Configure<vendor>(Configuration.GetSection("vendor"));
+            services.Configure<ConfigCore>(Configuration.GetSection("Core"));
+
         }
     }
 }

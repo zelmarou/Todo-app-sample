@@ -1,8 +1,0 @@
-version: '2'
-
-services:
-  todo:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace TodoCDN
+namespace ToDoCDN
 {
     public class Program
     {
@@ -11,6 +11,7 @@ namespace TodoCDN
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
+                .UseStartup<Startup>()
                 .Build();
 
             host.Run();

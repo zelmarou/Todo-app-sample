@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF42AB53-211A-40DF-ACA8-8375DD8154A7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo", "src\Todo\Todo.csproj", "{76F8E2B7-B9AA-41B0-9F93-48925A246F92}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B00964D7-994E-4DAC-9491-0599630A458B} = {B00964D7-994E-4DAC-9491-0599630A458B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoCDN", "src\ToDoCDN\ToDoCDN.csproj", "{B00964D7-994E-4DAC-9491-0599630A458B}"
 EndProject

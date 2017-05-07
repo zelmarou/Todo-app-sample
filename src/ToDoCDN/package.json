@@ -51,7 +51,7 @@
     "webpack-production": "webpack -p",
     "test": "jest --no-cache",
     "test-watch": "jest --no-cache --watch"
-  }
-, "-vs-binding":{"BeforeBuild":["install"]}
+  },
+  "-vs-binding": { "BeforeBuild": [ "install", "webpack" ] }
 }
 
