@@ -1,7 +1,7 @@
 ﻿const webpack = require('webpack');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const AssetsWebpackPlugin = require("assets-webpack-plugin");
 const isProduction = process.argv.indexOf('-p') !== -1;
 
 const plugins = [
@@ -10,7 +10,9 @@ const plugins = [
         root: path.resolve('.'),
         verbose: false,
         dry: false
-    })
+    }),
+    new AssetsWebpackPlugin({ prettyPrint: true, path: path.join(__dirname, '..', 'Todo') }),
+    new webpack.optimize.CommonsChunkPlugin({ name: "vendor", filename: "wwwroot/vendor-[hash].js" })
 ];
 
 if (isProduction) {
@@ -29,7 +31,7 @@ module.exports = {
     },
     entry: path.resolve('./Scripts/main.tsx'),
     output: {
-        filename: path.resolve('./wwwroot/scripts/app.js')
+        filename: "wwwroot/[name]-[chunkhash].js"
     },
     module: {
         loaders: [

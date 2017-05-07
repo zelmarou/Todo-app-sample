@@ -1,5 +1,5 @@
-﻿import * as deepFreeze from 'deep-freeze';
-import * as assign from 'lodash/assign';
+﻿import deepFreeze = require('deep-freeze');
+import assign = require('lodash/assign');
 import { createTodo, createTodos } from '../test-data';
 
 import { State, Todo } from '../../state';

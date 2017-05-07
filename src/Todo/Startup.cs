@@ -6,12 +6,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Todo.DataAccess;
+using Todo.Model.WebpackAssetsChildren;
+using Microsoft.Extensions.Options.ConfigurationExtensions;
 
 namespace Todo
 {
     public class Startup
     {
-        private readonly IConfiguration _configuration;
+        public IConfigurationRoot Configuration { get; set; }
+
         private readonly IHostingEnvironment _env;
 
         public Startup(IHostingEnvironment env)
@@ -20,9 +23,10 @@ namespace Todo
 
             _env = env;
 
-            _configuration = new ConfigurationBuilder()
+            Configuration = new ConfigurationBuilder()
                .SetBasePath(env.ContentRootPath)
                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+               .AddJsonFile("webpack-assets.json", optional: false)
                .Build();
         }
 
@@ -32,7 +36,7 @@ namespace Todo
             if (loggerFactory == null) throw new ArgumentNullException(nameof(loggerFactory));
             if (dbContext == null) throw new ArgumentNullException(nameof(dbContext));
 
-            loggerFactory.AddConsole(_configuration.GetSection("Logging"));
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
             if (_env.IsDevelopment())
@@ -45,6 +49,7 @@ namespace Todo
 
             DbInitializer.Initialize(dbContext);
         }
+        
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -52,9 +57,11 @@ namespace Todo
 
             services.AddMvc();
             services.AddEntityFrameworkSqlServer();
-
-            services.AddDbContext<SqlDbContext>(opt => opt.UseSqlServer(_configuration.GetConnectionString("Default")));
+            
+            services.AddDbContext<SqlDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddTransient<IDatabase, SqlDbContext>();
+            services.Configure<main>(Configuration.GetSection("main"));
+            
         }
     }
 }
