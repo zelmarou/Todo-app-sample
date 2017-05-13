@@ -39,7 +39,7 @@
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testResultsProcessor": "jest-teamcity-reporter",
+    "testResultsProcessor": "/node_modules/jest-teamcity-reporter",
     "moduleFileExtensions": [
       "ts",
       "tsx",
