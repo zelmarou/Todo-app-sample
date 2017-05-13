@@ -8,6 +8,7 @@
     "deep-freeze": "0.0.1",
     "jest": "^17.0.1",
     "jest-config": "^17.0.1",
+    "jest-teamcity-reporter": "0.6.2",
     "source-map-loader": "0.1.5",
     "ts-jest": "^17.0.0",
     "ts-loader": "1.0.0",
@@ -34,11 +35,11 @@
   },
   "jest": {
     "testRegex": "/tests/.*ts",
-    "testPathIgnorePatterns": [ "/node_modules/", "test-data.ts"],
+    "testPathIgnorePatterns": [ "/node_modules/", "test-data.ts" ],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
+    "testResultsProcessor": "jest-teamcity-reporter",
     "moduleFileExtensions": [
       "ts",
       "tsx",
